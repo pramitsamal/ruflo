@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "declaration": true,
+    "outDir": "../dist",
+    "rootDir": ".",
+    "paths": {
+      "@claude-flow/security": ["../../@claude-flow/security/src/index.ts"],
+      "@claude-flow/memory": ["../../@claude-flow/memory/src/index.ts"],
+      "@claude-flow/shared": ["../../@claude-flow/shared/src/index.ts"]
+    }
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["**/*.test.ts", "**/*.spec.ts"]
+}
