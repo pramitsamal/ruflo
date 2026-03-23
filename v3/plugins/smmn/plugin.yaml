@@ -1,0 +1,26 @@
+name: "@claude-flow/plugin-smmn"
+version: "0.1.0"
+description: "SMMN curated co-creation live events platform"
+author: "claude-flow-team"
+license: "MIT"
+type: "integration"
+categories: ["web3", "events", "nft", "defi"]
+tags: ["solana", "nft", "live-events", "backer-round", "summon-token"]
+permissions: ["memory", "network", "solana-rpc"]
+exports: ["SMMNPlugin", "BackerRoundService", "EventService", "NFTService", "RevenueService", "StakingService"]
+mcp_tools:
+  - smmn:create_event
+  - smmn:launch_backer_round
+  - smmn:purchase_backer_slot
+  - smmn:finalize_backer_round
+  - smmn:record_revenue
+  - smmn:distribute_profits
+  - smmn:stake_summon
+  - smmn:check_tier
+  - smmn:get_event_analytics
+hooks:
+  - post-task
+  - session-start
+verified: false
+trustLevel: "community"
+minClaudeFlowVersion: "3.0.0"
