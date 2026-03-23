@@ -3,6 +3,8 @@ import Icons from "unplugin-icons/vite";
 import { promises } from "fs";
 import { defineConfig } from "vitest/config";
 import { config } from "dotenv";
+// @ts-expect-error — optional PWA plugin, gracefully skipped if not installed
+import { SvelteKitPWA } from "@vite-pwa/sveltekit";
 
 config({ path: "./.env.local" });
 
@@ -19,6 +21,35 @@ function loadTTFAsArrayBuffer() {
 		},
 	};
 }
+// PWA plugin — only active when @vite-pwa/sveltekit is installed
+function smmnPwaPlugin() {
+	try {
+		return SvelteKitPWA({
+			scope: "/smmn",
+			base: "/",
+			registerType: "autoUpdate",
+			injectRegister: "script",
+			workbox: {
+				globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,woff2}"],
+				navigateFallback: "/smmn",
+				navigateFallbackDenylist: [/^\/api\//, /^\/conversation\//, /^\/chat\//],
+				runtimeCaching: [
+					{
+						urlPattern: /^https:\/\/.*\/smmn\/api\/.*/i,
+						handler: "NetworkFirst",
+						options: { cacheName: "smmn-api", expiration: { maxEntries: 50, maxAgeSeconds: 300 } },
+					},
+				],
+			},
+			manifest: false, // use static/smmn/manifest.json
+			devOptions: { enabled: false },
+		});
+	} catch {
+		// @vite-pwa/sveltekit not installed — skip silently
+		return null;
+	}
+}
+
 export default defineConfig({
 	plugins: [
 		sveltekit(),
@@ -26,7 +57,8 @@ export default defineConfig({
 			compiler: "svelte",
 		}),
 		loadTTFAsArrayBuffer(),
-	],
+		smmnPwaPlugin(),
+	].filter(Boolean),
 	// Allow external access via ngrok tunnel host
 	server: {
 		port: process.env.PORT ? parseInt(process.env.PORT) : 5173,

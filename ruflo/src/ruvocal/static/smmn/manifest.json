@@ -1,0 +1,94 @@
+{
+  "name": "SMMN — Co-Creation Events",
+  "short_name": "SMMN",
+  "description": "Back artists. Own the moment. Solana-native live events.",
+  "start_url": "/smmn",
+  "scope": "/smmn",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#9333ea",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "categories": ["entertainment", "music", "finance"],
+  "icons": [
+    {
+      "src": "/chatui/icon-36.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+    {
+      "src": "/chatui/icon-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/chatui/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/chatui/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/chatui/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/chatui/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/chatui/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/chatui/icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/chatui/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Browse Events",
+      "short_name": "Events",
+      "description": "See all live backer rounds",
+      "url": "/smmn/events",
+      "icons": [{ "src": "/chatui/icon-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "My Dashboard",
+      "short_name": "Dashboard",
+      "description": "View your VVIP NFTs and backed events",
+      "url": "/smmn/backer",
+      "icons": [{ "src": "/chatui/icon-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Stake $SUMMON",
+      "short_name": "Stake",
+      "description": "Stake $SUMMON tokens for tier benefits",
+      "url": "/smmn/token",
+      "icons": [{ "src": "/chatui/icon-96.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/chatui/omni-welcome.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "SMMN Event Discovery"
+    }
+  ]
+}

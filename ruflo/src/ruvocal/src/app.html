@@ -24,6 +24,13 @@
 			// For some reason, Sveltekit doesn't let us load env variables from .env here, so we load it from hooks.server.ts
 			window.gaId = "%gaId%";
 		</script>
+		<!-- PWA: SMMN manifest (loaded for /smmn routes) -->
+		<link rel="manifest" href="/smmn/manifest.json" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-title" content="SMMN" />
+		<link rel="apple-touch-icon" href="/chatui/apple-touch-icon.png" />
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover" class="h-dvh dark:bg-gray-900">
